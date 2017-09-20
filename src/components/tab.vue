@@ -1,7 +1,7 @@
 <template>
-  <div id="tab">
+  <div class="tab">
     <ul class="tab-items">
-      <router-link :to="{ name: 'recommend'}">精选</router-link>
+      <router-link :to="{ name: 'recommend'}" @click="onActive">精选</router-link>
       <router-link :to="{ name: 'singer'}">歌手</router-link>
       <router-link :to="{ name: 'ranking'}">排行</router-link>
       <router-link :to="{ name: 'radio'}">电台</router-link>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-  name: 'tab'
+  name: 'tab',
+  methods: {
+    onActive (e) {
+      console.log(e.target.tagName)
+    }
+  }
 }
 </script>
 
